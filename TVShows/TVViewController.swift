@@ -46,6 +46,15 @@ class TVViewController: UIViewController, UIImagePickerControllerDelegate, UINav
 
     
     @IBAction func addTapped(_ sender: Any) {
+        
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        let show = Show(context: context)
+        show.title = titleTextField.text
+        show.image = UIImagePNGRepresentation(tvImageView.image!) as NSData?
+        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
     }
     
     
