@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44604ACB1E8C596000099101 /* FullSizeRender.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 44604ACA1E8C596000099101 /* FullSizeRender.jpg */; };
+		44604ACD1E8C5A8000099101 /* TVViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44604ACC1E8C5A8000099101 /* TVViewController.swift */; };
 		44E9F3931E8C36840065E928 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E9F3921E8C36840065E928 /* AppDelegate.swift */; };
 		44E9F3951E8C36840065E928 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44E9F3941E8C36840065E928 /* ViewController.swift */; };
 		44E9F3981E8C36840065E928 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 44E9F3961E8C36840065E928 /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		44604ACA1E8C596000099101 /* FullSizeRender.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = FullSizeRender.jpg; sourceTree = "<group>"; };
+		44604ACC1E8C5A8000099101 /* TVViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVViewController.swift; sourceTree = "<group>"; };
 		44E9F38F1E8C36840065E928 /* TVShows.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVShows.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44E9F3921E8C36840065E928 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		44E9F3941E8C36840065E928 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,8 +60,10 @@
 		44E9F3911E8C36840065E928 /* TVShows */ = {
 			isa = PBXGroup;
 			children = (
+				44604ACA1E8C596000099101 /* FullSizeRender.jpg */,
 				44E9F3921E8C36840065E928 /* AppDelegate.swift */,
 				44E9F3941E8C36840065E928 /* ViewController.swift */,
+				44604ACC1E8C5A8000099101 /* TVViewController.swift */,
 				44E9F3961E8C36840065E928 /* Main.storyboard */,
 				44E9F39C1E8C36840065E928 /* Assets.xcassets */,
 				44E9F39E1E8C36840065E928 /* LaunchScreen.storyboard */,
@@ -129,6 +135,7 @@
 				44E9F3A01E8C36840065E928 /* LaunchScreen.storyboard in Resources */,
 				44E9F39D1E8C36840065E928 /* Assets.xcassets in Resources */,
 				44E9F3981E8C36840065E928 /* Main.storyboard in Resources */,
+				44604ACB1E8C596000099101 /* FullSizeRender.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,6 +148,7 @@
 			files = (
 				44E9F3951E8C36840065E928 /* ViewController.swift in Sources */,
 				44E9F39B1E8C36840065E928 /* TVShows.xcdatamodeld in Sources */,
+				44604ACD1E8C5A8000099101 /* TVViewController.swift in Sources */,
 				44E9F3931E8C36840065E928 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,6 +311,7 @@
 				44E9F3A61E8C36840065E928 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
