@@ -30,6 +30,15 @@ class TVViewController: UIViewController, UIImagePickerControllerDelegate, UINav
         
         present(imagePicker, animated: true, completion: nil)
         }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        tvImageView.image = image
+        
+        imagePicker.dismiss(animated: true, completion: nil)
+        //remember to dismiss the imagePicker - this brings the photo back to the app.
+    }
    
     
     @IBAction func cameraTapped(_ sender: Any) {
