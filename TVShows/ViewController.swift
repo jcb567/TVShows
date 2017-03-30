@@ -31,29 +31,29 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         do {
             shows = try context.fetch(Show.fetchRequest())
             print(shows)
-            
+            tableView.reloadData()
         } catch {
             
         }
+    }
     
-        func tableView(_: <#T##tableView: UITableView##UITableView#>, numberOfRowsInSection: <#T##Int#>) -> Int {
-            return shows.count
-        }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return shows.count
+    }
         
-        func tableView(_: <#T##tableView: UITableView##UITableView#>, cellForRowAt: <#T##IndexPath#>) -> UITableViewCell {
-            let cell = UITableViewCell()
-            let item = shows[IndexPath.row]
-            cell.textLabel?.text = item.name
-            return cell
-        }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        let show = shows[indexPath.row]
+        cell.textLabel?.text = show.title
+        cell.imageView?.image = UIImage(data: show.image as! Data)
+        return cell
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+}
+
+
     
     
     
 
-}
+
 

@@ -51,9 +51,11 @@ class TVViewController: UIViewController, UIImagePickerControllerDelegate, UINav
         
         let show = Show(context: context)
         show.title = titleTextField.text
-        show.image = UIImagePNGRepresentation(tvImageView.image!) as NSData?
+        show.image = UIImagePNGRepresentation(tvImageView.image!)! as NSData?
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+        navigationController!.popViewController(animated: true)
         
     }
     
