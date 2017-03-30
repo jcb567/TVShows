@@ -11,15 +11,28 @@ import UIKit
 class TVViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     
+    @IBOutlet weak var deletebutton: UIButton!
+    @IBOutlet weak var addupdatebutton: UIButton!
     @IBOutlet weak var tvImageView: UIImageView!
     @IBOutlet weak var titleTextField: UITextField!
     
     var imagePicker = UIImagePickerController()
+    var show : Show? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         imagePicker.delegate = self
+        
+        if show != nil {
+            tvImageView.image = UIImage(data: show!.image as! Data)
+            titleTextField.text = show!.title
+            
+            addupdatebutton.setTitle("Update", for: .normal)
+        } else {
+            deletebutton.isHidden = true
+        }
+        
     }
 
     
@@ -47,17 +60,32 @@ class TVViewController: UIViewController, UIImagePickerControllerDelegate, UINav
     
     @IBAction func addTapped(_ sender: Any) {
         
+         if show != nil {
+            show!.title = titleTextField.text
+            show!.image = UIImagePNGRepresentation(tvImageView.image!)! as NSData?
+            
+        } else {
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            
+            let show = Show(context: context)
+            show.title = titleTextField.text
+            show.image = UIImagePNGRepresentation(tvImageView.image!)! as NSData?
+        }
+        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+        navigationController!.popViewController(animated: true)
+    }
+    
+    @IBAction func deleteTapped(_ sender: Any) {
         let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         
-        let show = Show(context: context)
-        show.title = titleTextField.text
-        show.image = UIImagePNGRepresentation(tvImageView.image!)! as NSData?
+        context.delete(show!)
         
         (UIApplication.shared.delegate as! AppDelegate).saveContext()
         
         navigationController!.popViewController(animated: true)
         
     }
-    
     
 }
